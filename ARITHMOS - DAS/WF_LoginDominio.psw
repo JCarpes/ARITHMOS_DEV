@@ -435,7 +435,7 @@
     <created_user>-</created_user>
     <created_date>2021&#x2f;08&#x2f;20 19&#x3a;30&#x3a;26.224</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021&#x2f;10&#x2f;18 15&#x3a;51&#x3a;25.002</modified_date>
+    <modified_date>2021&#x2f;10&#x2f;20 13&#x3a;47&#x3a;26.488</modified_date>
 	<key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -451,12 +451,6 @@
     <hop>
       <from>InsertUserName</from>
       <to>InsertPassword</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>Launch Application</from>
-      <to>InsertUserName</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -481,6 +475,18 @@
     <hop>
       <from>Wait Open</from>
       <to>Modified Java Script Value</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>Launch Application</from>
+      <to>Delay row</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>Delay row</from>
+      <to>InsertUserName</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -561,78 +567,6 @@
     <GUI>
       <xloc>640</xloc>
       <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>GetWindowTitle</name>
-    <type>Windows-App-GUI-Read</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <getTextRow><field>        <elementData>
-        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
-
-        <XPath/>
-
-        <automationId>TitleBar</automationId>
-
-        <indexForAutomationId/>
-
-        <name/>
-
-        <indexForName/>
-
-        <className/>
-
-        <indexForClassName/>
-
-        <controlType>ControlType.TitleBar</controlType>
-
-        <indexForControlType/>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>title bar</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId/>
-
-        </elementData>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Escrita Fiscal&#x2f;&#x5d;</windowPath>
-
-        <criteria>Absolute XPath</criteria>
-
-        <criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
-
-        <elementIndex>0</elementIndex>
-
-        <actionType>Value</actionType>
-        <outputField>WindowTitle</outputField>
-
-</field>      </getTextRow><timeout>2</timeout>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>960</xloc>
-      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -804,7 +738,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>224</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -980,6 +914,32 @@
     </remotesteps>
     <GUI>
       <xloc>944</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Delay row</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>5</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
