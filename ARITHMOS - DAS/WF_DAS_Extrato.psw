@@ -435,7 +435,7 @@
     <created_user>-</created_user>
     <created_date>2021&#x2f;09&#x2f;12 23&#x3a;12&#x3a;07.392</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021&#x2f;10&#x2f;19 15&#x3a;39&#x3a;50.176</modified_date>
+    <modified_date>2021&#x2f;10&#x2f;20 00&#x3a;01&#x3a;12.644</modified_date>
 	<key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -629,14 +629,26 @@
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>MA_ClickOK</from>
-      <to>DR2</to>
+      <from>Text file output</from>
+      <to>Blocking Step</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>DR2</from>
+      <from>MA_ClickOK</from>
       <to>EA_AvisoDados&#x3f;</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MA_ClickFechar 4 2</from>
+      <to>Modified Java Script Value 2</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value 2</from>
+      <to>Blocking Step</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -730,7 +742,7 @@
       <schema_name/>
     </partitioning>
 <actionType>GET_PROPERTY_VALUE</actionType>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;Dom&#xed;nio Escrita Fiscal  - Vers&#xe3;o&#x3a; 10.1D-09 - 08&#x5d;&#x2f;w&#x5b;Aviso&#x5d;&#x5b;0&#x5d;</windowPath>
+        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;Aviso&#x5d;&#x5b;0&#x5d;</windowPath>
 
 <elementData>
         <absolutePath>&#x2f;Text&#x5b;0&#x5d;</absolutePath>
@@ -1226,7 +1238,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var vIniDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var vIniDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>vIniDateEmpresa</name>
         <rename>vIniDateEmpresa</rename>
         <type>Date</type>
@@ -2408,8 +2420,8 @@
     </step>
 
   <step>
-    <name>DR2</name>
-    <type>Delay</type>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
@@ -2417,8 +2429,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <timeout>1</timeout>
-    <scaletime>seconds</scaletime>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -2427,8 +2442,55 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>256</yloc>
+      <xloc>960</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var NomenclaturaExtrato &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var Result &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var OverwriteFile &#x3d; &#x22;&#x22;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>NomenclaturaExtrato</name>
+        <rename>NomenclaturaExtrato</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Result</name>
+        <rename>Result</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>OverwriteFile</name>
+        <rename>OverwriteFile</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>736</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
