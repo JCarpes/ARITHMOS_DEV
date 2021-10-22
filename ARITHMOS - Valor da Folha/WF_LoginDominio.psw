@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>WF_LoginDominio</name>
@@ -434,13 +435,25 @@
     <created_user>-</created_user>
     <created_date>2021&#x2f;08&#x2f;03 00&#x3a;00&#x3a;30.221</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021&#x2f;09&#x2f;07 10&#x3a;56&#x3a;29.430</modified_date>
+    <modified_date>2021&#x2f;10&#x2f;21 23&#x3a;15&#x3a;43.226</modified_date>
 	<key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
+    <hop>
+      <from>ClickOK</from>
+      <to>SC_DiaryMessage</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>Delay row</from>
+      <to>InsertUserName</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
     <hop>
       <from>InsertPassword</from>
       <to>ClickOK</to>
@@ -454,50 +467,20 @@
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>Wait Open</from>
-      <to>GetWindowTitle</to>
+      <from>Launch Application</from>
+      <to>Delay row</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>Launch Application</from>
-      <to>InsertUserName</to>
+      <from>SC_DiaryMessage</from>
+      <to>Wait Open</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
     <hop>
       <from>Start</from>
       <to>Launch Application</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>GetWindowTitle</from>
-      <to>Modified Java Script Value</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>Modified Java Script Value</from>
-      <to>Set Variables</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>ClickOK</from>
-      <to>Delay row</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>Delay row</from>
-      <to>Robot Handling</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>Robot Handling</from>
-      <to>Wait Open</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -576,8 +559,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>32</yloc>
+      <xloc>640</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -592,7 +575,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <timeout>3</timeout>
+    <timeout>5</timeout>
     <scaletime>seconds</scaletime>
     <cluster_schema/>
     <remotesteps>
@@ -602,80 +585,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>GetWindowTitle</name>
-    <type>Windows-App-GUI-Read</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <getTextRow><field>        <elementData>
-        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
-
-        <XPath/>
-
-        <automationId>TitleBar</automationId>
-
-        <indexForAutomationId/>
-
-        <name/>
-
-        <indexForName/>
-
-        <className/>
-
-        <indexForClassName/>
-
-        <controlType>ControlType.TitleBar</controlType>
-
-        <indexForControlType/>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>title bar</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId/>
-
-        </elementData>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Escrita Fiscal&#x2f;&#x5d;</windowPath>
-
-        <criteria>Absolute XPath</criteria>
-
-        <criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
-
-        <elementIndex>0</elementIndex>
-
-        <actionType>Value</actionType>
-        <outputField>WindowTitle</outputField>
-
-</field>      </getTextRow><timeout>2</timeout>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>976</xloc>
-      <yloc>160</yloc>
+      <xloc>304</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -746,8 +657,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>32</yloc>
+      <xloc>528</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -818,8 +729,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>32</yloc>
+      <xloc>400</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -847,15 +758,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>32</yloc>
+      <xloc>224</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
+    <name>SC_DiaryMessage</name>
+    <type>SurfaceClick</type>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
@@ -863,84 +774,21 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var LogLoginApp &#x3d; new Date&#x28;&#x29;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>LogLoginApp</name>
-        <rename>LogLoginApp</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Robot Handling</name>
-    <type>RobotHandling</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <multiple>N</multiple>
-      <setTextFields>        <field>          <eventList>Keyboard</eventList>
-          <events/>
-          <value>Enter</value>
-        </field>      </setTextFields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>960</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Set Variables</name>
-    <type>SetVariable</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <field_name>WindowTitle</field_name>
-        <variable_name>WINDOWTITLE</variable_name>
-        <variable_type>ROOT_PROCESS</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>LogLoginApp</field_name>
-        <variable_name>LOGLOGINAPP</variable_name>
-        <variable_type>ROOT_PROCESS</variable_type>
-        <default_value/>
-        </field>
-      </fields>
-    <use_formatting>Y</use_formatting>
+      <matchPattern>SINGLE</matchPattern>
+      <clickType>CLICK</clickType>
+      <position>CENTRE</position>
+      <timeout>5</timeout>
+      <imgIndex>0</imgIndex>
+      <images>
+      <image>&#x7b;&#x22;rows&#x22;&#x3a;15,&#x22;cols&#x22;&#x3a;23,&#x22;type&#x22;&#x3a;16,&#x22;data&#x22;&#x3a;&#x22;6ebi7&#x2b;3s4ufm5&#x2b;zv6urw5OPn7&#x2b;3t6&#x2b;nh6&#x2b;vf7&#x2f;Hl4OPh6&#x2b;7y4&#x2b;Ls7Ony7unr5&#x2b;Pi7u7u4uXj7uzr7&#x2b;3s6eLl9u&#x2f;06OLn8vDw8PDw7vLz6O3w6&#x2b;7z8vP37e3t8vLs9fXp9vXr8fLw8fDy8O&#x2f;47uzy8Ovt9&#x2f;Lz7&#x2b;7w8vLy8vHt8e7q9vHw8uvu&#x2b;PH28e737vD46O7z09zgqrC1am9ybG5ub3BslZOLyMW98u3q9vHy6ejqtLO1p6Gi29TX9PD1uLe5pqagu7qw8&#x2f;Do9fDt9&#x2f;Dz6Oj26uz3z9bfmqKpZm5uQUdGUFVUT1FRYF5djIeEzMC&#x2b;9u3q7e3td3l6XFVYycDD3dbdhIGDdXNrq6uf9PLn9PHp9&#x2f;Hy6u&#x2f;&#x2b;5On4mqGyRk1WZGZg4&#x2b;fc7fLx5ertmZyhVVBSbF5Y8OTe4&#x2b;bqeX&#x2b;GW1RZw7e9rqSqdnBxtLOp9PTm9fXn8fDm9&#x2f;Py4u373uf1bnKFhoeRy8m&#x2f;9PPl7&#x2f;Lw7fD40dXgjIqQSzw54NTQ3&#x2b;Xqc3mEWlVeqp6kQDI2sKek7ene9PPl8fPn8&#x2f;bt8fLw1&#x2b;n0zNjkUk5hjIGL6ePY9&#x2f;Tl8PHt6e3y5Or3oaOtWU9PrKSk09jhcnmINTE9ZVpio5GS5NTO&#x2b;O7k&#x2b;fXq9PLq6&#x2b;&#x2f;q6O3r2O31ws7YSD9TkoKN7OPZ&#x2b;PTi8vHt7vH15Or3r7O&#x2b;XVdYr6qr0NbhcXiJGBUkNigzpI&#x2b;O8dvV&#x2f;&#x2f;Lp&#x2b;vHo9vPu7PDr7PLx2ezzztrkTURYi32J4tvS&#x2b;fbn9fLt7e&#x2f;w4&#x2b;fyoaOtVVBSwr&#x2f;B1d3qbHSFKiU0TD1Fb1VV2L64&#x2b;uff&#x2f;PHp9PDr8fLu7PHw4PD23ebwVlRodW59xsO79PPl8&#x2f;Dr7ezuztHZhYSNS0VG2dbY3OXyb3iGWlRfrZ6iTjk4ppCL4NHI&#x2b;fDm9fLq8vHt7fDu6O716O75mZ6zQURTX2Bc5OPZ8&#x2f;Lu8O&#x2f;xmJieXVlejoKC7efo3Obwd4CNWlNYxri5u62vXVFPopyR7eze9&#x2f;fr8&#x2f;Tr7u&#x2f;t7&#x2b;736Or109vslp&#x2b;tVVtaP0E7Pj89Pj4&#x2b;VlNVlY&#x2b;Q4dTS9u7u4OrxbXd&#x2b;XVdYzsLC5N3gfnx8XV5UlZiJ7vHi8PHn9&#x2f;X08O327vD45&#x2b;73ytPcoqiteX5&#x2f;fH5&#x2b;g4GBpKCf0czL&#x2b;O7u9&#x2f;Hy5errtru8sayr4tra7u&#x2f;zv8TFnqacrLOm7vLm7u&#x2f;m7uzs8O708PD26e7x6O&#x2f;y7vL37&#x2f;L37&#x2f;Hy8PDw8fDs9fLu8u3s9fDx7vDw7vDw8e3s8e&#x2f;v7O&#x2f;z6fHx6&#x2f;Lr8Pbr9Pfu9PPv9O&#x2f;x7u3v7u3v8fPz8vLy8e3y9PD17ezw7e&#x2f;v7fHs8fPt8vHt8e&#x2f;u8fDy8fDy8vLy8fHx6uzt8vT08PHt8vHt7urp9&#x2f;L09&#x2f;H2&#x22;&#x7d;</image>
+      </images>
+      <templates>
+      <template>
+      <name>0</name>
+      <points>
+      </points>
+      </template>
+      </templates>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -949,8 +797,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>160</yloc>
+      <xloc>768</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -973,8 +821,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>112</yloc>
+      <xloc>48</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1050,13 +898,25 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>32</yloc>
+      <xloc>944</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step_error_handling>
+      <error>
+        <source_step>SC_DiaryMessage</source_step>
+        <target_step>Wait Open</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
