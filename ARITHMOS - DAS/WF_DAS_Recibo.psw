@@ -435,7 +435,7 @@
     <created_user>-</created_user>
     <created_date>2021&#x2f;10&#x2f;21 00&#x3a;00&#x3a;49.189</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021&#x2f;10&#x2f;21 01&#x3a;16&#x3a;12.904</modified_date>
+    <modified_date>2021&#x2f;10&#x2f;24 23&#x3a;52&#x3a;37.910</modified_date>
 	<key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -479,68 +479,14 @@
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>DR3</from>
-      <to>EA_MsgPeriodo&#x3f;</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>DR8</from>
-      <to>MJS_PeriodoNProcessado</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
       <from>EA_AvisoDados&#x3f;</from>
       <to>FR_AvisoDados</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
     <hop>
-      <from>EA_MsgPeriodo&#x3f;</from>
-      <to>FR_Periodo</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>FR_AvisoDados</from>
-      <to>DR3</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
       <from>FR_AvisoDados</from>
       <to>MA_ClickOKAvisoDados</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>FR_Periodo</from>
-      <to>MA_ClickOKPeriodo</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>MA_ClickFechar</from>
-      <to>DR9</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>MA_ClickOKAvisoDados</from>
-      <to>DR3</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>MA_ClickOKPeriodo</from>
-      <to>DR8</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>MJS_PeriodoNProcessado</from>
-      <to>MA_ClickFechar</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -559,12 +505,6 @@
     <hop>
       <from>MA_ClickYesCertificate</from>
       <to>DR4</to>
-      <enabled>Y</enabled>
-      <visible>Y</visible>
-    </hop>
-    <hop>
-      <from>FR_Periodo</from>
-      <to>DR10</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -612,7 +552,7 @@
     </hop>
     <hop>
       <from>SC_ClickFechar</from>
-      <to>MA_ClickFechar 4</to>
+      <to>MA_ClickFechar 2</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -637,6 +577,78 @@
     <hop>
       <from>DR4</from>
       <to>Surface Click</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MA_ClickFechar 2</from>
+      <to>Blocking Step</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>Blocking Step</from>
+      <to>MJS_FimEmpresa</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MJS_FimEmpresa</from>
+      <to>TFO_Recibo</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>DR3</from>
+      <to>EA_MsgPeriodo&#x3f;</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>DR8</from>
+      <to>MJS_PeriodoNProcessado</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>EA_MsgPeriodo&#x3f;</from>
+      <to>FR_Periodo</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>FR_Periodo</from>
+      <to>MA_ClickOKPeriodo</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MA_ClickFechar</from>
+      <to>DR9</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MA_ClickOKPeriodo</from>
+      <to>DR8</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MJS_PeriodoNProcessado</from>
+      <to>MA_ClickFechar</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>FR_AvisoDados</from>
+      <to>DR10</to>
+      <enabled>Y</enabled>
+      <visible>Y</visible>
+    </hop>
+    <hop>
+      <from>MA_ClickOKAvisoDados</from>
+      <to>DR10</to>
       <enabled>Y</enabled>
       <visible>Y</visible>
     </hop>
@@ -668,6 +680,58 @@
     </step>
 
   <step>
+    <name>DR10</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>1</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DR4</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>10</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Delay row</name>
     <type>Delay</type>
     <distribute>Y</distribute>
@@ -689,6 +753,228 @@
     <GUI>
       <xloc>240</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>EA_AvisoDados&#x3f;</name>
+    <type>Windows-App-GUI-ElementAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>GET_PROPERTY_VALUE</actionType>
+        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;Aviso&#x5d;&#x5b;0&#x5d;</windowPath>
+
+<elementData>
+        <absolutePath>&#x2f;Text&#x5b;0&#x5d;</absolutePath>
+
+        <XPath>&#x2f;&#x2f;Text&#x5b;&#x40;AutomationId&#x3d;&#x22;65535&#x22;&#x5d;</XPath>
+
+        <automationId>65535</automationId>
+
+        <indexForAutomationId>0</indexForAutomationId>
+
+        <name>Outros dados n&#xe3;o digitados&#x21;</name>
+
+        <indexForName>0</indexForName>
+
+        <className>Static</className>
+
+        <indexForClassName>1</indexForClassName>
+
+        <controlType>ControlType.Text</controlType>
+
+        <indexForControlType>0</indexForControlType>
+
+        <acceleratorKey/>
+
+        <accessKey/>
+
+        <helpText/>
+
+        <localizedControlType>text</localizedControlType>
+
+        <processInfo/>
+
+        <supportedPatterns>LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+        <frameworkId>Win32</frameworkId>
+
+</elementData>
+<criteria>NAME</criteria>
+
+<criteriaValue>Outros dados n&#xe3;o digitados&#x21;</criteriaValue>
+
+<elementIndex>0</elementIndex>
+
+<elementProperty>IS_ELEMENT_EXIST</elementProperty>
+
+<reverseCondition>N</reverseCondition>
+
+<timeout/>
+
+<outVariable>MsgAviso</outVariable>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>EA_OverwriteFile</name>
+    <type>Windows-App-GUI-ElementAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>GET_PROPERTY_VALUE</actionType>
+        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;&#x2f;w&#x5b;Salvar arquivo&#x5d;&#x5b;0&#x5d;&#x2f;w&#x5b;Confirm Save As&#x5d;&#x5b;0&#x5d;</windowPath>
+
+<elementData>
+        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
+
+        <XPath>&#x2f;&#x2f;TitleBar&#x5b;&#x40;AutomationId&#x3d;&#x22;TitleBar&#x22;&#x5d;</XPath>
+
+        <automationId>TitleBar</automationId>
+
+        <indexForAutomationId>0</indexForAutomationId>
+
+        <name/>
+
+        <indexForName/>
+
+        <className/>
+
+        <indexForClassName>0</indexForClassName>
+
+        <controlType>ControlType.TitleBar</controlType>
+
+        <indexForControlType>0</indexForControlType>
+
+        <acceleratorKey/>
+
+        <accessKey/>
+
+        <helpText/>
+
+        <localizedControlType>title bar</localizedControlType>
+
+        <processInfo/>
+
+        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+        <frameworkId/>
+
+</elementData>
+<criteria>ABSOLUTE_XPATH</criteria>
+
+<criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
+
+<elementIndex>0</elementIndex>
+
+<elementProperty>IS_ELEMENT_EXIST</elementProperty>
+
+<reverseCondition>N</reverseCondition>
+
+<timeout/>
+
+<outVariable>OverwriteFile</outVariable>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1072</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>FR_AvisoDados</name>
+    <type>FilterRows</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>MA_ClickOKAvisoDados</send_true_to>
+<send_false_to>DR10</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>MsgAviso</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>FR_OverwriteFile</name>
+    <type>FilterRows</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>MA_ClickYesOverwrite</send_true_to>
+<send_false_to>SC_MoveFechar</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>OverwriteFile</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1344</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -751,6 +1037,86 @@
     <GUI>
       <xloc>80</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MA_ClickFechar 2</name>
+    <type>Windows-App-GUI-MouseAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>CLICK</actionType>
+
+<horizontalScroll/>
+
+<verticalScroll/>
+
+<toggleState/>
+
+<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
+
+<sourceGroup>
+        <elementData>
+                <absolutePath>&#x2f;Button&#x5b;5&#x5d;</absolutePath>
+
+                <XPath/>
+
+                <automationId>1001</automationId>
+
+                <indexForAutomationId/>
+
+                <name>Fechar</name>
+
+                <indexForName/>
+
+                <className>Button</className>
+
+                <indexForClassName/>
+
+                <controlType>ControlType.Button</controlType>
+
+                <indexForControlType/>
+
+                <acceleratorKey/>
+
+                <accessKey>Alt&#x2b;f</accessKey>
+
+                <helpText/>
+
+                <localizedControlType>button</localizedControlType>
+
+                <processInfo/>
+
+                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+                <frameworkId>Win32</frameworkId>
+
+        </elementData>
+</sourceGroup>
+<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
+
+<sourceCriteriaValue>&#x2f;Button&#x5b;5&#x5d;</sourceCriteriaValue>
+
+<sourceElementIndex>0</sourceElementIndex>
+
+      <timeout>3</timeout>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -836,573 +1202,6 @@
     </step>
 
   <step>
-    <name>MA_ClickRecibo</name>
-    <type>Windows-App-GUI-MouseAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>CLICK</actionType>
-
-<horizontalScroll/>
-
-<verticalScroll/>
-
-<toggleState/>
-
-<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
-
-<sourceGroup>
-        <elementData>
-                <absolutePath>&#x2f;RadioButton&#x5b;7&#x5d;</absolutePath>
-
-                <XPath>&#x2f;&#x2f;RadioButton&#x5b;&#x40;AutomationId&#x3d;&#x22;3&#x22;&#x5d;</XPath>
-
-                <automationId>3</automationId>
-
-                <indexForAutomationId>0</indexForAutomationId>
-
-                <name>Recibo</name>
-
-                <indexForName>0</indexForName>
-
-                <className>Button</className>
-
-                <indexForClassName>27</indexForClassName>
-
-                <controlType>ControlType.RadioButton</controlType>
-
-                <indexForControlType>7</indexForControlType>
-
-                <acceleratorKey/>
-
-                <accessKey/>
-
-                <helpText/>
-
-                <localizedControlType>radio button</localizedControlType>
-
-                <processInfo/>
-
-                <supportedPatterns>InvokePatternIdentifiers.Pattern,SelectionItemPatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-                <frameworkId>Win32</frameworkId>
-
-        </elementData>
-</sourceGroup>
-<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
-
-<sourceCriteriaValue>&#x2f;RadioButton&#x5b;7&#x5d;</sourceCriteriaValue>
-
-<sourceElementIndex>0</sourceElementIndex>
-
-      <timeout>3</timeout>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>MJS_IniEmpresa</name>
-    <type>ScriptValueMod</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var vIniDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>vIniDateEmpresa</name>
-        <rename>vIniDateEmpresa</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>SV_Data</name>
-    <type>Windows-App-GUI-Write</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <setTextFields><field>        <elementData>
-        <absolutePath>&#x2f;Edit&#x5b;5&#x5d;</absolutePath>
-
-        <XPath/>
-
-        <automationId>1002</automationId>
-
-        <indexForAutomationId/>
-
-        <name/>
-
-        <indexForName/>
-
-        <className>PBEDIT190</className>
-
-        <indexForClassName/>
-
-        <controlType>ControlType.Edit</controlType>
-
-        <indexForControlType/>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>edit</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId>Win32</frameworkId>
-
-        </elementData>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</windowPath>
-
-        <criteria>Absolute XPath</criteria>
-
-        <criteriaValue>&#x2f;Edit&#x5b;5&#x5d;</criteriaValue>
-
-        <elementIndex>0</elementIndex>
-
-        <actionType>Set New Text</actionType>
-        <Text>09&#x2f;2021</Text>
-
-</field>      </setTextFields><timeout/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DR3</name>
-    <type>Delay</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <timeout>1</timeout>
-    <scaletime>seconds</scaletime>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DR8</name>
-    <type>Delay</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <timeout>1</timeout>
-    <scaletime>seconds</scaletime>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DR9</name>
-    <type>Delay</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <timeout>1</timeout>
-    <scaletime>seconds</scaletime>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1088</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>EA_AvisoDados&#x3f;</name>
-    <type>Windows-App-GUI-ElementAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>GET_PROPERTY_VALUE</actionType>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;Aviso&#x5d;&#x5b;0&#x5d;</windowPath>
-
-<elementData>
-        <absolutePath>&#x2f;Text&#x5b;0&#x5d;</absolutePath>
-
-        <XPath>&#x2f;&#x2f;Text&#x5b;&#x40;AutomationId&#x3d;&#x22;65535&#x22;&#x5d;</XPath>
-
-        <automationId>65535</automationId>
-
-        <indexForAutomationId>0</indexForAutomationId>
-
-        <name>Outros dados n&#xe3;o digitados&#x21;</name>
-
-        <indexForName>0</indexForName>
-
-        <className>Static</className>
-
-        <indexForClassName>1</indexForClassName>
-
-        <controlType>ControlType.Text</controlType>
-
-        <indexForControlType>0</indexForControlType>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>text</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId>Win32</frameworkId>
-
-</elementData>
-<criteria>NAME</criteria>
-
-<criteriaValue>Outros dados n&#xe3;o digitados&#x21;</criteriaValue>
-
-<elementIndex>0</elementIndex>
-
-<elementProperty>IS_ELEMENT_EXIST</elementProperty>
-
-<reverseCondition>N</reverseCondition>
-
-<timeout/>
-
-<outVariable>MsgAviso</outVariable>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>EA_MsgPeriodo&#x3f;</name>
-    <type>Windows-App-GUI-ElementAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>GET_PROPERTY_VALUE</actionType>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;&#x2f;Empresa&#x3a;&#x2f;&#x5d;&#x5b;0&#x5d;</windowPath>
-
-<elementData>
-        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
-
-        <XPath/>
-
-        <automationId>TitleBar</automationId>
-
-        <indexForAutomationId/>
-
-        <name/>
-
-        <indexForName/>
-
-        <className/>
-
-        <indexForClassName/>
-
-        <controlType>ControlType.TitleBar</controlType>
-
-        <indexForControlType/>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>title bar</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId/>
-
-</elementData>
-<criteria>ABSOLUTE_XPATH</criteria>
-
-<criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
-
-<elementIndex>0</elementIndex>
-
-<elementProperty>IS_ELEMENT_EXIST</elementProperty>
-
-<reverseCondition>N</reverseCondition>
-
-<timeout/>
-
-<outVariable>MsgPeriodo</outVariable>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>FR_AvisoDados</name>
-    <type>FilterRows</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>MA_ClickOKAvisoDados</send_true_to>
-<send_false_to>DR3</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>MsgAviso</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>FR_Periodo</name>
-    <type>FilterRows</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>MA_ClickOKPeriodo</send_true_to>
-<send_false_to>DR10</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>MsgPeriodo</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>MA_ClickFechar</name>
-    <type>Windows-App-GUI-MouseAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>CLICK</actionType>
-
-<horizontalScroll/>
-
-<verticalScroll/>
-
-<toggleState/>
-
-<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
-
-<sourceGroup>
-        <elementData>
-                <absolutePath>&#x2f;Button&#x5b;5&#x5d;</absolutePath>
-
-                <XPath/>
-
-                <automationId>1001</automationId>
-
-                <indexForAutomationId/>
-
-                <name>Fechar</name>
-
-                <indexForName/>
-
-                <className>Button</className>
-
-                <indexForClassName/>
-
-                <controlType>ControlType.Button</controlType>
-
-                <indexForControlType/>
-
-                <acceleratorKey/>
-
-                <accessKey>Alt&#x2b;f</accessKey>
-
-                <helpText/>
-
-                <localizedControlType>button</localizedControlType>
-
-                <processInfo/>
-
-                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-                <frameworkId>Win32</frameworkId>
-
-        </elementData>
-</sourceGroup>
-<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
-
-<sourceCriteriaValue>&#x2f;Button&#x5b;5&#x5d;</sourceCriteriaValue>
-
-<sourceElementIndex>0</sourceElementIndex>
-
-      <timeout>3</timeout>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>912</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
     <name>MA_ClickOKAvisoDados</name>
     <type>Windows-App-GUI-MouseAction</type>
     <distribute>Y</distribute>
@@ -1483,389 +1282,7 @@
     </step>
 
   <step>
-    <name>MA_ClickOKPeriodo</name>
-    <type>Windows-App-GUI-MouseAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>CLICK</actionType>
-
-<horizontalScroll/>
-
-<verticalScroll/>
-
-<toggleState/>
-
-<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;&#x2f;Empresa&#x2f;&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
-
-<sourceGroup>
-        <elementData>
-                <absolutePath>&#x2f;Button&#x5b;0&#x5d;</absolutePath>
-
-                <XPath/>
-
-                <automationId>2</automationId>
-
-                <indexForAutomationId/>
-
-                <name>OK</name>
-
-                <indexForName/>
-
-                <className>Button</className>
-
-                <indexForClassName/>
-
-                <controlType>ControlType.Button</controlType>
-
-                <indexForControlType/>
-
-                <acceleratorKey/>
-
-                <accessKey/>
-
-                <helpText/>
-
-                <localizedControlType>button</localizedControlType>
-
-                <processInfo/>
-
-                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-                <frameworkId>Win32</frameworkId>
-
-        </elementData>
-</sourceGroup>
-<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
-
-<sourceCriteriaValue>&#x2f;Button&#x5b;0&#x5d;</sourceCriteriaValue>
-
-<sourceElementIndex>0</sourceElementIndex>
-
-      <timeout>3</timeout>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>MJS_PeriodoNProcessado</name>
-    <type>ScriptValueMod</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var NomenclaturaExtrato &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var Result &#x3d; &#x22;Periodo Nao Processado&#x21;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var OverwriteFile &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var SemExtrato &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var vFimDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>NomenclaturaExtrato</name>
-        <rename>NomenclaturaExtrato</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>Result</name>
-        <rename>Result</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>OverwriteFile</name>
-        <rename>OverwriteFile</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>SemExtrato</name>
-        <rename>SemExtrato</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>vFimDateEmpresa</name>
-        <rename>vFimDateEmpresa</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>752</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DR10</name>
-    <type>Delay</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <timeout>1</timeout>
-    <scaletime>seconds</scaletime>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>704</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DR4</name>
-    <type>Delay</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <timeout>10</timeout>
-    <scaletime>seconds</scaletime>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>704</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>MA_ClickYesCertificate</name>
-    <type>Windows-App-GUI-MouseAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>CLICK</actionType>
-
-<horizontalScroll/>
-
-<verticalScroll/>
-
-<toggleState/>
-
-<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;Windows Security&#x5d;</sourceWindowPath>
-
-<sourceGroup>
-        <elementData>
-                <absolutePath>&#x2f;Button&#x5b;1&#x5d;</absolutePath>
-
-                <XPath>&#x2f;&#x2f;Button&#x5b;&#x40;AutomationId&#x3d;&#x22;OkButton&#x22;&#x5d;</XPath>
-
-                <automationId>OkButton</automationId>
-
-                <indexForAutomationId>0</indexForAutomationId>
-
-                <name>OK</name>
-
-                <indexForName>0</indexForName>
-
-                <className>Button</className>
-
-                <indexForClassName>1</indexForClassName>
-
-                <controlType>ControlType.Button</controlType>
-
-                <indexForControlType>1</indexForControlType>
-
-                <acceleratorKey/>
-
-                <accessKey>Alt, O</accessKey>
-
-                <helpText/>
-
-                <localizedControlType>button</localizedControlType>
-
-                <processInfo/>
-
-                <supportedPatterns>InvokePatternIdentifiers.Pattern,ScrollItemPatternIdentifiers.Pattern</supportedPatterns>
-
-                <frameworkId>XAML</frameworkId>
-
-        </elementData>
-</sourceGroup>
-<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
-
-<sourceCriteriaValue>&#x2f;Button&#x5b;1&#x5d;</sourceCriteriaValue>
-
-<sourceElementIndex>0</sourceElementIndex>
-
-      <timeout>20</timeout>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>704</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>EA_OverwriteFile</name>
-    <type>Windows-App-GUI-ElementAction</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<actionType>GET_PROPERTY_VALUE</actionType>
-        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;&#x2f;w&#x5b;Salvar arquivo&#x5d;&#x5b;0&#x5d;&#x2f;w&#x5b;Confirm Save As&#x5d;&#x5b;0&#x5d;</windowPath>
-
-<elementData>
-        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
-
-        <XPath>&#x2f;&#x2f;TitleBar&#x5b;&#x40;AutomationId&#x3d;&#x22;TitleBar&#x22;&#x5d;</XPath>
-
-        <automationId>TitleBar</automationId>
-
-        <indexForAutomationId>0</indexForAutomationId>
-
-        <name/>
-
-        <indexForName/>
-
-        <className/>
-
-        <indexForClassName>0</indexForClassName>
-
-        <controlType>ControlType.TitleBar</controlType>
-
-        <indexForControlType>0</indexForControlType>
-
-        <acceleratorKey/>
-
-        <accessKey/>
-
-        <helpText/>
-
-        <localizedControlType>title bar</localizedControlType>
-
-        <processInfo/>
-
-        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
-
-        <frameworkId/>
-
-</elementData>
-<criteria>ABSOLUTE_XPATH</criteria>
-
-<criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
-
-<elementIndex>0</elementIndex>
-
-<elementProperty>IS_ELEMENT_EXIST</elementProperty>
-
-<reverseCondition>N</reverseCondition>
-
-<timeout/>
-
-<outVariable>OverwriteFile</outVariable>
-
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1136</xloc>
-      <yloc>960</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>FR_OverwriteFile</name>
-    <type>FilterRows</type>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>MA_ClickYesOverwrite</send_true_to>
-<send_false_to>SC_MoveFechar</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>OverwriteFile</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1408</xloc>
-      <yloc>960</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>MA_ClickFechar 4</name>
+    <name>MA_ClickRecibo</name>
     <type>Windows-App-GUI-MouseAction</type>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1886,37 +1303,37 @@
 
 <sourceGroup>
         <elementData>
-                <absolutePath>&#x2f;Button&#x5b;5&#x5d;</absolutePath>
+                <absolutePath>&#x2f;RadioButton&#x5b;7&#x5d;</absolutePath>
 
-                <XPath/>
+                <XPath>&#x2f;&#x2f;RadioButton&#x5b;&#x40;AutomationId&#x3d;&#x22;3&#x22;&#x5d;</XPath>
 
-                <automationId>1001</automationId>
+                <automationId>3</automationId>
 
-                <indexForAutomationId/>
+                <indexForAutomationId>0</indexForAutomationId>
 
-                <name>Fechar</name>
+                <name>Recibo</name>
 
-                <indexForName/>
+                <indexForName>0</indexForName>
 
                 <className>Button</className>
 
-                <indexForClassName/>
+                <indexForClassName>27</indexForClassName>
 
-                <controlType>ControlType.Button</controlType>
+                <controlType>ControlType.RadioButton</controlType>
 
-                <indexForControlType/>
+                <indexForControlType>7</indexForControlType>
 
                 <acceleratorKey/>
 
-                <accessKey>Alt&#x2b;f</accessKey>
+                <accessKey/>
 
                 <helpText/>
 
-                <localizedControlType>button</localizedControlType>
+                <localizedControlType>radio button</localizedControlType>
 
                 <processInfo/>
 
-                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+                <supportedPatterns>InvokePatternIdentifiers.Pattern,SelectionItemPatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
 
                 <frameworkId>Win32</frameworkId>
 
@@ -1924,7 +1341,7 @@
 </sourceGroup>
 <sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
 
-<sourceCriteriaValue>&#x2f;Button&#x5b;5&#x5d;</sourceCriteriaValue>
+<sourceCriteriaValue>&#x2f;RadioButton&#x5b;7&#x5d;</sourceCriteriaValue>
 
 <sourceElementIndex>0</sourceElementIndex>
 
@@ -1938,8 +1355,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>816</yloc>
+      <xloc>416</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2018,8 +1435,88 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>960</yloc>
+      <xloc>848</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MA_ClickYesCertificate</name>
+    <type>Windows-App-GUI-MouseAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>CLICK</actionType>
+
+<horizontalScroll/>
+
+<verticalScroll/>
+
+<toggleState/>
+
+<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;Windows Security&#x5d;</sourceWindowPath>
+
+<sourceGroup>
+        <elementData>
+                <absolutePath>&#x2f;Button&#x5b;1&#x5d;</absolutePath>
+
+                <XPath>&#x2f;&#x2f;Button&#x5b;&#x40;AutomationId&#x3d;&#x22;OkButton&#x22;&#x5d;</XPath>
+
+                <automationId>OkButton</automationId>
+
+                <indexForAutomationId>0</indexForAutomationId>
+
+                <name>OK</name>
+
+                <indexForName>0</indexForName>
+
+                <className>Button</className>
+
+                <indexForClassName>1</indexForClassName>
+
+                <controlType>ControlType.Button</controlType>
+
+                <indexForControlType>1</indexForControlType>
+
+                <acceleratorKey/>
+
+                <accessKey>Alt, O</accessKey>
+
+                <helpText/>
+
+                <localizedControlType>button</localizedControlType>
+
+                <processInfo/>
+
+                <supportedPatterns>InvokePatternIdentifiers.Pattern,ScrollItemPatternIdentifiers.Pattern</supportedPatterns>
+
+                <frameworkId>XAML</frameworkId>
+
+        </elementData>
+</sourceGroup>
+<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
+
+<sourceCriteriaValue>&#x2f;Button&#x5b;1&#x5d;</sourceCriteriaValue>
+
+<sourceElementIndex>0</sourceElementIndex>
+
+      <timeout>20</timeout>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2098,8 +1595,43 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1408</xloc>
-      <yloc>816</yloc>
+      <xloc>1344</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MJS_IniEmpresa</name>
+    <type>ScriptValueMod</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var vIniDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>vIniDateEmpresa</name>
+        <rename>vIniDateEmpresa</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2139,8 +1671,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>960</yloc>
+      <xloc>416</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2179,7 +1711,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>960</yloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2217,8 +1749,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>816</yloc>
+      <xloc>848</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2256,8 +1788,80 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>816</yloc>
+      <xloc>1072</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>SV_Data</name>
+    <type>Windows-App-GUI-Write</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <setTextFields><field>        <elementData>
+        <absolutePath>&#x2f;Edit&#x5b;5&#x5d;</absolutePath>
+
+        <XPath/>
+
+        <automationId>1002</automationId>
+
+        <indexForAutomationId/>
+
+        <name/>
+
+        <indexForName/>
+
+        <className>PBEDIT190</className>
+
+        <indexForClassName/>
+
+        <controlType>ControlType.Edit</controlType>
+
+        <indexForControlType/>
+
+        <acceleratorKey/>
+
+        <accessKey/>
+
+        <helpText/>
+
+        <localizedControlType>edit</localizedControlType>
+
+        <processInfo/>
+
+        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+        <frameworkId>Win32</frameworkId>
+
+        </elementData>
+        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</windowPath>
+
+        <criteria>Absolute XPath</criteria>
+
+        <criteriaValue>&#x2f;Edit&#x5b;5&#x5d;</criteriaValue>
+
+        <elementIndex>0</elementIndex>
+
+        <actionType>Set New Text</actionType>
+        <Text>09&#x2f;2021</Text>
+
+</field>      </setTextFields><timeout/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2328,8 +1932,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>960</yloc>
+      <xloc>624</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2369,7 +1973,601 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>960</yloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>TFO_Recibo</name>
+    <type>TextFileOutput</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>R&#x3a;&#x5c;Logs&#x5c;DAS&#x5c;DAS-Recibo.txt</name>
+      <is_command>N</is_command>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>Y</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>COD</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>NOME</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>USEDATE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>vIniDateEmpresa</name>
+        <type>Date</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>vFimDateEmpresa</name>
+        <type>Date</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Result</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1072</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MJS_FimEmpresa</name>
+    <type>ScriptValueMod</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var vFimDateEmpresa &#x3d; new Date&#x28;&#x29;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>vFimDateEmpresa</name>
+        <rename>vFimDateEmpresa</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DR3</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>1</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DR8</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>1</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DR9</name>
+    <type>Delay</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <timeout>1</timeout>
+    <scaletime>seconds</scaletime>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1808</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>EA_MsgPeriodo&#x3f;</name>
+    <type>Windows-App-GUI-ElementAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>GET_PROPERTY_VALUE</actionType>
+        <windowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;&#x2f;Empresa&#x3a;&#x2f;&#x5d;&#x5b;0&#x5d;</windowPath>
+
+<elementData>
+        <absolutePath>&#x2f;TitleBar&#x5b;0&#x5d;</absolutePath>
+
+        <XPath/>
+
+        <automationId>TitleBar</automationId>
+
+        <indexForAutomationId/>
+
+        <name/>
+
+        <indexForName/>
+
+        <className/>
+
+        <indexForClassName/>
+
+        <controlType>ControlType.TitleBar</controlType>
+
+        <indexForControlType/>
+
+        <acceleratorKey/>
+
+        <accessKey/>
+
+        <helpText/>
+
+        <localizedControlType>title bar</localizedControlType>
+
+        <processInfo/>
+
+        <supportedPatterns>ValuePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+        <frameworkId/>
+
+</elementData>
+<criteria>ABSOLUTE_XPATH</criteria>
+
+<criteriaValue>&#x2f;TitleBar&#x5b;0&#x5d;</criteriaValue>
+
+<elementIndex>0</elementIndex>
+
+<elementProperty>IS_ELEMENT_EXIST</elementProperty>
+
+<reverseCondition>N</reverseCondition>
+
+<timeout/>
+
+<outVariable>MsgPeriodo</outVariable>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>FR_Periodo</name>
+    <type>FilterRows</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>MA_ClickOKPeriodo</send_true_to>
+<send_false_to>DR10</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>MsgPeriodo</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>true</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MA_ClickFechar</name>
+    <type>Windows-App-GUI-MouseAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>CLICK</actionType>
+
+<horizontalScroll/>
+
+<verticalScroll/>
+
+<toggleState/>
+
+<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;DAS&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
+
+<sourceGroup>
+        <elementData>
+                <absolutePath>&#x2f;Button&#x5b;5&#x5d;</absolutePath>
+
+                <XPath/>
+
+                <automationId>1001</automationId>
+
+                <indexForAutomationId/>
+
+                <name>Fechar</name>
+
+                <indexForName/>
+
+                <className>Button</className>
+
+                <indexForClassName/>
+
+                <controlType>ControlType.Button</controlType>
+
+                <indexForControlType/>
+
+                <acceleratorKey/>
+
+                <accessKey>Alt&#x2b;f</accessKey>
+
+                <helpText/>
+
+                <localizedControlType>button</localizedControlType>
+
+                <processInfo/>
+
+                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+                <frameworkId>Win32</frameworkId>
+
+        </elementData>
+</sourceGroup>
+<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
+
+<sourceCriteriaValue>&#x2f;Button&#x5b;5&#x5d;</sourceCriteriaValue>
+
+<sourceElementIndex>0</sourceElementIndex>
+
+      <timeout>3</timeout>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1632</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MA_ClickOKPeriodo</name>
+    <type>Windows-App-GUI-MouseAction</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<actionType>CLICK</actionType>
+
+<horizontalScroll/>
+
+<verticalScroll/>
+
+<toggleState/>
+
+<sourceWindowPath>&#x2f;w&#x5b;Desktop&#x5d;&#x2f;w&#x5b;&#x2f;Dom&#xed;nio Escrita Fiscal&#x2f;&#x5d;&#x2f;w&#x5b;&#x2f;Empresa&#x2f;&#x5d;&#x5b;0&#x5d;</sourceWindowPath>
+
+<sourceGroup>
+        <elementData>
+                <absolutePath>&#x2f;Button&#x5b;0&#x5d;</absolutePath>
+
+                <XPath/>
+
+                <automationId>2</automationId>
+
+                <indexForAutomationId/>
+
+                <name>OK</name>
+
+                <indexForName/>
+
+                <className>Button</className>
+
+                <indexForClassName/>
+
+                <controlType>ControlType.Button</controlType>
+
+                <indexForControlType/>
+
+                <acceleratorKey/>
+
+                <accessKey/>
+
+                <helpText/>
+
+                <localizedControlType>button</localizedControlType>
+
+                <processInfo/>
+
+                <supportedPatterns>InvokePatternIdentifiers.Pattern,LegacyIAccessiblePatternIdentifiers.Pattern</supportedPatterns>
+
+                <frameworkId>Win32</frameworkId>
+
+        </elementData>
+</sourceGroup>
+<sourceCriteria>ABSOLUTE_XPATH</sourceCriteria>
+
+<sourceCriteriaValue>&#x2f;Button&#x5b;0&#x5d;</sourceCriteriaValue>
+
+<sourceElementIndex>0</sourceElementIndex>
+
+      <timeout>3</timeout>
+
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MJS_PeriodoNProcessado</name>
+    <type>ScriptValueMod</type>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var NomenclaturaExtrato &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var Result &#x3d; &#x22;Periodo Nao Processado&#x21;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var OverwriteFile &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var SemExtrato &#x3d; &#x22;&#x22;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>NomenclaturaExtrato</name>
+        <rename>NomenclaturaExtrato</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Result</name>
+        <rename>Result</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>OverwriteFile</name>
+        <rename>OverwriteFile</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>SemExtrato</name>
+        <rename>SemExtrato</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1472</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
